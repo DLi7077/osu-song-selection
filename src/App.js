@@ -12,7 +12,10 @@ function App() {
     const delay = 150;
     audio.volume = 0;
 
-    for (let i = 0; i < 8; i++) {
+    await sleep(100);
+    audio.volume += 0.025;
+
+    for (let i = 0; i < 6; i++) {
       await sleep(delay).then(() => {
         audio.volume += 0.05;
       });
@@ -35,6 +38,7 @@ function App() {
       <Background src={SONGS[songIndex].background} />
       <SongMenu
         songs={SONGS}
+        songIndex={songIndex}
         updateSelectedIndex={(index) => {
           if (index === songIndex) return;
           setSongIndex(index);

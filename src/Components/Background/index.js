@@ -29,7 +29,7 @@ export default function Background({ src }) {
       position: "fixed",
       zIndex: -2,
       width: "100%",
-      filter: 'brightness(80%)'
+      filter: 'brightness(70%)'
     },
   };
 

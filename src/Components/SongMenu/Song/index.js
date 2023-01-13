@@ -19,7 +19,7 @@ export default function Song(props) {
   }, []);
 
   const HEIGHT = 130;
-  const WIDTH = 900;
+  const WIDTH = 1000;
 
   function computeDivGrowth(yPos) {
     const MID_POINT = 1080 / 2 - HEIGHT;
@@ -33,8 +33,18 @@ export default function Song(props) {
         className={`song-item ${props.index}`}
         ref={ref}
         style={{
-          transform: `translate(${computeDivGrowth(y) + 100}px)`,
+          transform: `translate(${
+            computeDivGrowth(y) + (props.isSelected ? 0 : 200)
+          }px)`,
           position: "relative",
+          ...(props.isSelected
+            ? {
+                transition: "transform 200ms ease-out",
+                // margin: 0,
+                marginTop: "20px",
+                marginBottom: "0px",
+              }
+            : {}),
         }}
         onClick={() => {
           props.updateSelectedIndex(props.index);
@@ -56,8 +66,9 @@ export default function Song(props) {
             width: `${WIDTH}px`,
             height: `${HEIGHT}px`,
             //https://stackoverflow.com/a/50391532
-            filter:
-              "sepia(100%) saturate(300%) brightness(70%) hue-rotate(170deg)",
+            filter: `sepia(100%) saturate(300%) brightness(70%) hue-rotate(${
+              props.isSelected ? 0 : 170
+            }deg)`,
           }}
           alt="menu select background"
         />

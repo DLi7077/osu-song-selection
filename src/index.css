@@ -38,6 +38,9 @@ code {
     monospace;
 }
 
+img{
+  pointer-events: none;
+}
 
 * {
   user-select: none; /* Standard syntax */
