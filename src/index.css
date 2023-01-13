@@ -1,13 +1,27 @@
+/* https://www.fontsquirrel.com/fonts/aller */
+@font-face {
+  font-family: AllerRg;
+  src: url("./Aller/Aller_Rg.ttf");
+}
+@font-face {
+  font-family: AllerLt;
+  src: url("./Aller/Aller_Lt.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  color: white;
+  min-height: 100vh;
+
+  font-family: AllerRg;
+  font-size: 12px;
+  background-color: black;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
