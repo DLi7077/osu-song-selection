@@ -6,8 +6,8 @@ import Song from "./Song";
 export default function SongMenu() {
   return (
     <div className="song-menu">
-      {SONGS.map((song) => (
-        <Song song={song} />
+      {SONGS.map((song, idx) => (
+        <Song song={song} key={`song-${idx}`} />
       ))}
     </div>
   );

@@ -16,12 +16,16 @@ body {
 
   overflow-x: hidden;
 
-  font-family: AllerRg;
+  font-family: AllerLt;
   font-size: 16px;
   background-color: black;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+b {
+  font-weight: 600;
 }
 
 code {
