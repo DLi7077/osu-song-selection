@@ -28,7 +28,6 @@ export default function Background({ src }) {
       )}%, -${YPosOffset(mousePos.y)}%)`,
       position: "fixed",
       zIndex: -2,
-      
     },
   };
 
