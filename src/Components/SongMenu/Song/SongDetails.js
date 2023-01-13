@@ -14,14 +14,21 @@ export default function SongDetails({
     const partStar = rating - wholeStars;
     for (let star = 0; star < wholeStars; star++) {
       fullStars.push(
-        <img src={starIcon} style={{ width: "24px" }} alt="star rating" />
+        <img
+          key={`${title}-${artist}-${star_rating}-${star}`}
+          src={starIcon}
+          style={{ width: "24px" }}
+          alt="star rating"
+        />
       );
     }
 
     fullStars.push(
       <img
+        key={`${title}-${artist}-${star_rating}-${partStar}`}
         src={starIcon}
         style={{ width: `${Math.max(16, 24 * partStar)}px` }}
+        alt="partial star rating"
       />
     );
 
@@ -45,6 +52,7 @@ export default function SongDetails({
           height: "100%",
           objectFit: "cover",
         }}
+        alt="song thumbnail"
       />
       <div style={{ padding: "1rem", height: "100%" }}>
         <div style={{ fontSize: "1.75rem" }}>{title}</div>

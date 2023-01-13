@@ -5,7 +5,6 @@ export const SONGS = [
     difficulty: "Mayu's Expert",
     star_rating: 5.42,
     background: require("../Assets/Backgrounds/koko-de-ikiteiru.jpg"),
-    background: require("../Assets/Backgrounds/koko-de-ikiteiru.jpg"),
   },
   {
     title: "Tada Koe Hitotsu",
