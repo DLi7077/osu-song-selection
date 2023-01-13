@@ -12,6 +12,6 @@
 }
 
 .song-item {
-  margin-bottom: -3rem;
-  transition: all 1s ease-out;
+  margin-bottom: -2rem;
+  transition: transform 1s ease-out;
 }
