@@ -1,10 +1,12 @@
 import Background from "./Components/Background";
 import siesta from "./Assets/Backgrounds/siesta.jpg";
+import SongMenu from "./Components/SongMenu";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Background src={siesta} />
+      <SongMenu />
     </div>
   );
 }

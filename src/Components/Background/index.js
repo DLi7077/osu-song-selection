@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function Background({ src }) {
-  const [mousePos, setMousePos] = useState({});
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -10,7 +10,6 @@ export default function Background({ src }) {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // console.log(mousePos);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -24,9 +23,12 @@ export default function Background({ src }) {
   const classes = {
     background: {
       objectFit: "cover",
-      transform: `scale(1.05) translate(-${XPosOffset(
+      transform: `scale(1.1) translate(-${XPosOffset(
         mousePos.x
       )}%, -${YPosOffset(mousePos.y)}%)`,
+      position: "fixed",
+      zIndex: -2,
+      
     },
   };
 
