@@ -11,10 +11,13 @@
 body {
   margin: 0;
   color: white;
-  min-height: 100vh;
+  height: 1080px;
+  width: 1920px;
+
+  overflow: hidden;
 
   font-family: AllerRg;
-  font-size: 12px;
+  font-size: 16px;
   background-color: black;
 
   -webkit-font-smoothing: antialiased;
