@@ -8,6 +8,10 @@
   src: url("./Aller/Aller_Lt.ttf");
 }
 
+html {
+  cursor: url("./Assets/cursor.png") 64 64, auto;
+}
+
 body {
   margin: 0;
   color: white;
@@ -23,7 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  cursor: url("./Assets/cursor.png"), auto;
 }
 
 b {
@@ -33,4 +36,9 @@ b {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+* {
+  user-select: none; /* Standard syntax */
 }

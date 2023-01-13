@@ -1,5 +1,4 @@
 import React from "react";
-import thumbnail from "../../../Assets/SongMenu/natsuiro-fubuki-tanmoshi.jpg";
 import starIcon from "../../../Assets/SongMenu/star.png";
 
 export default function SongDetails({
@@ -36,7 +35,7 @@ export default function SongDetails({
         gap: "0.25rem",
         height: "109px",
         padding: "11px",
-        paddingInline: "8px",
+        paddingInline: "9px",
       }}
     >
       <img

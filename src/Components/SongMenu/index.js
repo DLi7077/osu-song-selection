@@ -1,13 +1,17 @@
 import React from "react";
 import "./styles.css";
-import { SONGS } from "../../Constants/songs";
 import Song from "./Song";
 
-export default function SongMenu() {
+export default function SongMenu(props) {
   return (
     <div className="song-menu">
-      {SONGS.map((song, idx) => (
-        <Song song={song} key={`song-${idx}`} />
+      {props.songs.map((song, idx) => (
+        <Song
+          song={song}
+          key={`song-${idx}`}
+          index={idx}
+          updateSelectedIndex={props.updateSelectedIndex}
+        />
       ))}
     </div>
   );
