@@ -9,25 +9,25 @@ function App() {
   const [audio] = useState(new Audio(SONGS[songIndex].audio));
 
   async function raiseVolume(audio) {
-    const delay = 400;
-    audio.volume = 0.1;
-    await sleep(delay);
-    audio.volume += 0.1;
-    await sleep(delay);
-    audio.volume += 0.1;
-    await sleep(delay);
-    audio.volume += 0.1;
-  }
+    const delay = 150;
+    audio.volume = 0;
 
+    for (let i = 0; i < 8; i++) {
+      await sleep(delay).then(() => {
+        audio.volume += 0.05;
+      });
+    }
+  }
 
   useEffect(() => {
     audio.loop = true;
 
     audio.setAttribute("src", SONGS[songIndex].audio); //change the source
     audio.load();
-    audio.currentTime = 48;
+    audio.currentTime = 45;
     audio.play();
     raiseVolume(audio);
+    // eslint-disable-next-line
   }, [songIndex]);
 
   return (
