@@ -13,5 +13,7 @@
 
 .song-item {
   margin-bottom: -2rem;
-  transition: transform 1000ms ease-out;
+  transition: transition 1000ms ease-out;
+  transition: position 1000ms ease-out;
+  transition: margin 500ms ease-out;
 }

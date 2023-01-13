@@ -11,6 +11,7 @@ export default function SongMenu(props) {
           key={`song-${idx}`}
           index={idx}
           updateSelectedIndex={props.updateSelectedIndex}
+          isSelected={idx === props.songIndex}
         />
       ))}
     </div>
