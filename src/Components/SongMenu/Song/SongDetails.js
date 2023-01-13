@@ -7,7 +7,7 @@ export default function SongDetails({
   artist,
   difficulty,
   star_rating,
-  s,
+  background,
 }) {
   function StarRating({ rating }) {
     let fullStars = [];
@@ -20,7 +20,10 @@ export default function SongDetails({
     }
 
     fullStars.push(
-      <img src={starIcon} style={{ width: `${24 * partStar}px` }} />
+      <img
+        src={starIcon}
+        style={{ width: `${Math.max(16, 24 * partStar)}px` }}
+      />
     );
 
     return fullStars;
@@ -30,14 +33,14 @@ export default function SongDetails({
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "0.5rem",
-        height: "112px",
-        padding: "9px",
-        paddingInline: "7px",
+        gap: "0.25rem",
+        height: "109px",
+        padding: "11px",
+        paddingInline: "8px",
       }}
     >
       <img
-        src={thumbnail}
+        src={background}
         style={{
           width: "160px",
           height: "100%",
