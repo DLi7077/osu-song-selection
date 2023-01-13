@@ -7,7 +7,7 @@ function App() {
     <div>
       <Background src={siesta} />
       <SongMenu />
-    </div>
+    </div> 
   );
 }
 
