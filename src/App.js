@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Background from "./Components/Background";
 import { SONGS } from "./Constants/songs";
 import SongMenu from "./Components/SongMenu";
