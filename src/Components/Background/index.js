@@ -23,11 +23,13 @@ export default function Background({ src }) {
   const classes = {
     background: {
       objectFit: "cover",
-      transform: `scale(1.1) translate(-${XPosOffset(
+      transform: `scale(1.075) translate(-${XPosOffset(
         mousePos.x
       )}%, -${YPosOffset(mousePos.y)}%)`,
       position: "fixed",
       zIndex: -2,
+      width: "100%",
+      filter: 'brightness(80%)'
     },
   };
 

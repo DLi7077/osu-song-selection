@@ -3,7 +3,6 @@ import SongDetails from "./SongDetails";
 
 export default function Song(props) {
   const ref = useRef();
-
   const [y, setY] = useState(0);
 
   function updateY() {
@@ -20,22 +19,25 @@ export default function Song(props) {
   }, []);
 
   const HEIGHT = 130;
-  const WIDTH = 700;
+  const WIDTH = 900;
 
   function computeDivGrowth(yPos) {
-    const MID_POINT = 1080 / 2 - HEIGHT / 2;
-    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 12) / 100);
+    const MID_POINT = 1080 / 2 - HEIGHT;
+    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 20) / 100);
     return growth;
   }
 
   return (
     <div className="song-item-wrapper">
       <div
-        className="song-item"
+        className={`song-item ${props.index}`}
         ref={ref}
         style={{
-          transform: `translate(${computeDivGrowth(y)}px)`,
+          transform: `translate(${computeDivGrowth(y) + 100}px)`,
           position: "relative",
+        }}
+        onClick={() => {
+          props.updateSelectedIndex(props.index);
         }}
       >
         <div style={{ position: "absolute", height: "100%", zIndex: 1 }}>
@@ -57,6 +59,7 @@ export default function Song(props) {
             filter:
               "sepia(100%) saturate(300%) brightness(70%) hue-rotate(170deg)",
           }}
+          alt="menu select background"
         />
       </div>
     </div>
