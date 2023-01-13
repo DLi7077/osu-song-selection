@@ -6,7 +6,7 @@ export default function Song(props) {
 
   const [y, setY] = useState(0);
 
-  function updateY(event) {
+  function updateY() {
     if (!ref.current) return;
     setY(ref.current.getBoundingClientRect().y);
   }
@@ -20,11 +20,11 @@ export default function Song(props) {
   }, []);
 
   const HEIGHT = 130;
-  const WIDTH = 900;
+  const WIDTH = 700;
 
   function computeDivGrowth(yPos) {
     const MID_POINT = 1080 / 2 - HEIGHT / 2;
-    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 16) / 100);
+    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 12) / 100);
     return growth;
   }
 
@@ -38,17 +38,13 @@ export default function Song(props) {
           position: "relative",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            height: "100%",
-          }}
-        >
+        <div style={{ position: "absolute", height: "100%", zIndex: 1 }}>
           <SongDetails
             title={props.song.title}
             artist={props.song.artist}
             difficulty={props.song.difficulty}
             star_rating={props.song.star_rating}
+            background={props.song.background}
           />
         </div>
         <img
@@ -57,6 +53,9 @@ export default function Song(props) {
             top: 0,
             width: `${WIDTH}px`,
             height: `${HEIGHT}px`,
+            //https://stackoverflow.com/a/50391532
+            filter:
+              "sepia(100%) saturate(300%) brightness(70%) hue-rotate(170deg)",
           }}
         />
       </div>
