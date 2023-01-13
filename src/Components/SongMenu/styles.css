@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-top: 300px;
+  padding-bottom: 500px;
 }
 
 .song-item-wrapper {
@@ -10,8 +12,6 @@
 }
 
 .song-item {
-  margin-bottom: -1.5rem;
-  outline: 1px solid red;
-  background-color: gray;
-  transition: width 1s ease-out;
+  margin-bottom: -3rem;
+  transition: all 1s ease-out;
 }

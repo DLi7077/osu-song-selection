@@ -71,4 +71,40 @@ export const SONGS = [
     difficulty: "Mayu's Expert",
     star_rating: 5.42,
   },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
+  {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+  },
 ];

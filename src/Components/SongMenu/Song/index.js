@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import "./styles.css";
 
 export default function Song(props) {
   const ref = useRef();
@@ -20,12 +19,12 @@ export default function Song(props) {
     };
   }, []);
 
-  function computeDivWidth(yPos) {
-    const MAX_WIDTH = 370;
-    const HEIGHT = 130;
+  const HEIGHT = 130;
+  const WIDTH = 700;
+
+  function computeDivGrowth(yPos) {
     const MID_POINT = 1080 / 2 - HEIGHT / 2;
-    const growth =
-      MAX_WIDTH + Math.max(0, (MID_POINT - Math.abs(MID_POINT - yPos)) / 10);
+    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 12) / 100);
     return growth;
   }
 
@@ -35,11 +34,19 @@ export default function Song(props) {
         className="song-item"
         ref={ref}
         style={{
-          width: `${computeDivWidth(y)}px`,
-          height: "130px",
+          transform: `translate(${computeDivGrowth(y)}px)`,
         }}
       >
-        {computeDivWidth(y)}
+        <img
+          src={require("../../../Assets/SongMenu/menu-button-background.png")}
+          style={{
+            position: "absolute",
+            top: 0,
+            width: `${WIDTH}px`,
+            height: `${HEIGHT}px`,
+            position: "relative",
+          }}
+        />
       </div>
     </div>
   );
