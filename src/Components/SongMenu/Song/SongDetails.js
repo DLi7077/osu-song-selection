@@ -7,13 +7,16 @@ export default function SongDetails({
   artist,
   difficulty,
   star_rating,
+  s,
 }) {
   function StarRating({ rating }) {
     let fullStars = [];
     const wholeStars = Math.trunc(rating);
     const partStar = rating - wholeStars;
     for (let star = 0; star < wholeStars; star++) {
-      fullStars.push(<img src={starIcon} style={{ width: "24px" }} />);
+      fullStars.push(
+        <img src={starIcon} style={{ width: "24px" }} alt="star rating" />
+      );
     }
 
     fullStars.push(
