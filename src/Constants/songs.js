@@ -1,23 +1,5 @@
 export const SONGS = [
   {
-    title: "Koko de Ikiteiru",
-    artist: "mary x jon-YAKITORY // Amateurre",
-    difficulty: "Mayu's Expert",
-    star_rating: 5.42,
-    background: require("../Assets/Backgrounds/koko-de-ikiteiru.jpg"),
-    audio: new Audio(require("../Assets/Audio/koko-de-ikiteiru.mp3")),
-    start_time: 51,
-  },
-  {
-    title: "Tada Koe Hitotsu",
-    artist: "Rokudenashi // keevy",
-    difficulty: "Expert",
-    star_rating: 5.59,
-    background: require("../Assets/Backgrounds/tada-koe-hitotsu.png"),
-    audio: new Audio(require("../Assets/Audio/tada-koe-hitotsu.mp3")),
-    start_time: 93,
-  },
-  {
     title: "Kimi no Shiranai Monogatari",
     artist: "supercell // monstrata",
     difficulty: "Celestial",
@@ -92,6 +74,15 @@ export const SONGS = [
     start_time: 36.5,
   },
   {
+    title: "Koko de Ikiteiru",
+    artist: "mary x jon-YAKITORY // Amateurre",
+    difficulty: "Mayu's Expert",
+    star_rating: 5.42,
+    background: require("../Assets/Backgrounds/koko-de-ikiteiru.jpg"),
+    audio: new Audio(require("../Assets/Audio/koko-de-ikiteiru.mp3")),
+    start_time: 51,
+  },
+  {
     title: "Ano Yume o Nazotte",
     artist: "YOASOBI // Sarawatlism",
     difficulty: "Daisuki",
@@ -117,6 +108,15 @@ export const SONGS = [
     background: require("../Assets/Backgrounds/level-yanaginagi-ver.jpg"),
     audio: new Audio(require("../Assets/Audio/level-yanaginagi-ver.mp3")),
     start_time: 164,
+  },
+  {
+    title: "Tada Koe Hitotsu",
+    artist: "Rokudenashi // keevy",
+    difficulty: "Expert",
+    star_rating: 5.59,
+    background: require("../Assets/Backgrounds/tada-koe-hitotsu.png"),
+    audio: new Audio(require("../Assets/Audio/tada-koe-hitotsu.mp3")),
+    start_time: 93,
   },
   {
     title: "Kani*Do-Luck! (TV Size)",
