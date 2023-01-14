@@ -42,7 +42,7 @@ export default function SongDetails({
         gap: "0.25rem",
         height: "108px",
         padding: "11px",
-        paddingInline: "9px",
+        paddingInline: "10px",
       }}
     >
       <img

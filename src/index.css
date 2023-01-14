@@ -19,14 +19,12 @@ body {
   height: 1080px;
   width: 1920px;
 
-
   font-family: AllerLt;
   font-size: 16px;
   background-color: black;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 b {
@@ -38,10 +36,31 @@ code {
     monospace;
 }
 
-img{
+img {
   pointer-events: none;
 }
 
 * {
   user-select: none; /* Standard syntax */
+}
+
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgrey;
 }

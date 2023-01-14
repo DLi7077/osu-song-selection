@@ -13,9 +13,9 @@ export default function Song(props) {
 
   useEffect(() => {
     updateY();
-    window.addEventListener("wheel", updateY);
+    window.addEventListener("scroll", updateY);
     return () => {
-      window.removeEventListener("wheel", updateY);
+      window.removeEventListener("scroll", updateY);
     };
   }, []);
 
@@ -24,7 +24,7 @@ export default function Song(props) {
 
   function computeDivGrowth(yPos) {
     const MID_POINT = 1080 / 2 - HEIGHT;
-    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 10) / 100);
+    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 12) / 100);
     return growth;
   }
 
@@ -34,7 +34,7 @@ export default function Song(props) {
       transform: `translate(${computeDivGrowth(y) + 200}px)`,
     },
     hovering: {
-      transform: `translate(${computeDivGrowth(y) + 125}px)`,
+      transform: `translate(${computeDivGrowth(y) + 110}px)`,
       margin: 0,
     },
     selected: {
@@ -61,6 +61,21 @@ export default function Song(props) {
         }}
         onClick={() => {
           props.updateSelectedIndex(props.index);
+          const { height, y } = ref.current.getBoundingClientRect();
+
+          const screenCenter = 1080 / 2;
+          const divCenter = height ;
+          const shouldBeAt = Math.max(
+            0,
+            y + window.scrollY - screenCenter + divCenter
+          );
+
+          window.scrollTo({
+            top: shouldBeAt,
+            left: 0,
+
+            behavior: "smooth",
+          });
         }}
         onMouseEnter={() => {
           setHovering(true);
