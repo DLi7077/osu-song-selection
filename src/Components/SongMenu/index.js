@@ -2,7 +2,6 @@ import "./styles.css";
 import Song from "./Song";
 
 export default function SongMenu(props) {
-  
   return (
     <div className="song-menu">
       {props.songs.map((song, idx) => (
@@ -12,6 +11,7 @@ export default function SongMenu(props) {
           index={idx}
           updateSelectedIndex={props.updateSelectedIndex}
           isSelected={idx === props.songIndex}
+          playHoverSound={props.playHoverSound}
         />
       ))}
     </div>

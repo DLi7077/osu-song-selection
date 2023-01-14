@@ -73,12 +73,12 @@ export default function Song(props) {
           window.scrollTo({
             top: shouldBeAt,
             left: 0,
-
             behavior: "smooth",
           });
         }}
         onMouseEnter={() => {
           setHovering(true);
+          props.playHoverSound();
         }}
         onMouseLeave={() => {
           setHovering(false);
@@ -93,7 +93,7 @@ export default function Song(props) {
             filter: `sepia(100%) saturate(300%) brightness(80%) hue-rotate(${
               props.isSelected ? 0 : 170
             }deg)`,
-            opacity: 0.9
+            opacity: 0.9,
           }}
           alt="menu select background"
         />
