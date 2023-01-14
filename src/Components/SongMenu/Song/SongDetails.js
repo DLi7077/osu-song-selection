@@ -1,12 +1,38 @@
 import React from "react";
 import starIcon from "../../../Assets/SongMenu/star.png";
 
+const classes = {
+  fullStar: { width: "24px" },
+  contentContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.25rem",
+    height: "108px",
+    width: "100%",
+    position:'relative'
+  },
+  thumbnail: {
+    width: "160px",
+    height: "100%",
+    objectFit: "cover",
+  },
+  tint: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
+  },
+};
+
 export default function SongDetails({
   title,
   artist,
   difficulty,
   star_rating,
   background,
+  isSelected,
 }) {
   function StarRating({ rating }) {
     let fullStars = [];
@@ -17,7 +43,7 @@ export default function SongDetails({
         <img
           key={`${title}-${artist}-${star_rating}-${star}`}
           src={starIcon}
-          style={{ width: "24px" }}
+          style={classes.fullStar}
           alt="star rating"
         />
       );
@@ -34,35 +60,27 @@ export default function SongDetails({
 
     return fullStars;
   }
+
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.25rem",
-        height: "108px",
-        padding: "11px",
-        paddingInline: "10px",
+        margin: "11px",
+        marginInline: "10px",
       }}
     >
-      <img
-        src={background}
-        style={{
-          width: "160px",
-          height: "100%",
-          objectFit: "cover",
-        }}
-        alt="song thumbnail"
-      />
-      <div style={{ padding: "1rem", height: "100%" }}>
-        <div style={{ fontSize: "1.75rem" }}>{title}</div>
-        <div style={{ fontSize: "1.15rem" }}>{artist}</div>
-        <div style={{ fontSize: "1.25rem" }}>
-          <b>{difficulty}</b>
+      <div style={classes.contentContainer}>
+        <img src={background} style={classes.thumbnail} alt="song thumbnail" />
+        <div style={{ margin: "0.5rem", height: "100%" }}>
+          <div style={{ fontSize: "1.75rem" }}>{title}</div>
+          <div style={{ fontSize: "1.15rem" }}>{artist}</div>
+          <div style={{ fontSize: "1.25rem" }}>
+            <b>{difficulty}</b>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <StarRating rating={star_rating} />
+          </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <StarRating rating={star_rating} />
-        </div>
+        {!isSelected && <div style={classes.tint} />}
       </div>
     </div>
   );

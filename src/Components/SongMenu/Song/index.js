@@ -30,7 +30,7 @@ export default function Song(props) {
 
   const classes = {
     default: {
-      transition: "all 1000ms cubic-bezier(.16,.92,.76,1)",
+      transition: "all 1000ms cubic-bezier(.27,.75,.36,.96)",
       transform: `translate(${computeDivGrowth(y) + 200}px)`,
     },
     hovering: {
@@ -64,7 +64,7 @@ export default function Song(props) {
           const { height, y } = ref.current.getBoundingClientRect();
 
           const screenCenter = 1080 / 2;
-          const divCenter = height ;
+          const divCenter = height;
           const shouldBeAt = Math.max(
             0,
             y + window.scrollY - screenCenter + divCenter
@@ -84,28 +84,37 @@ export default function Song(props) {
           setHovering(false);
         }}
       >
-        <div style={{ position: "absolute", height: "100%", zIndex: 1 }}>
+        <img
+          src={require("../../../Assets/SongMenu/menu-button-background.png")}
+          style={{
+            width: `${WIDTH}px`,
+            height: `${HEIGHT}px`,
+            //https://stackoverflow.com/a/50391532
+            filter: `sepia(100%) saturate(300%) brightness(80%) hue-rotate(${
+              props.isSelected ? 0 : 170
+            }deg)`,
+            opacity: 0.9
+          }}
+          alt="menu select background"
+        />
+        <div
+          style={{
+            position: "absolute",
+            height: "100%",
+            top: 0,
+            width: "100%",
+          }}
+        >
           <SongDetails
             title={props.song.title}
             artist={props.song.artist}
             difficulty={props.song.difficulty}
             star_rating={props.song.star_rating}
             background={props.song.background}
+            isSelected={props.isSelected}
           />
         </div>
-        <img
-          src={require("../../../Assets/SongMenu/menu-button-background.png")}
-          style={{
-            top: 0,
-            width: `${WIDTH}px`,
-            height: `${HEIGHT}px`,
-            //https://stackoverflow.com/a/50391532
-            filter: `sepia(100%) saturate(300%) brightness(70%) hue-rotate(${
-              props.isSelected ? 0 : 170
-            }deg)`,
-          }}
-          alt="menu select background"
-        />
+        <div style={classes.tint} />
       </div>
     </div>
   );
