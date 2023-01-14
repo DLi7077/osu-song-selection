@@ -3,9 +3,11 @@ import Background from "./Components/Background";
 import { SONGS } from "./Constants/songs";
 import SongMenu from "./Components/SongMenu";
 import useAudio from "./Hooks/useAudio";
+import VanishingBackground from "./Components/Background/VanishingBackground";
 
 function App() {
   const [songIndex, setSongIndex] = useState(0);
+  const [previousIndex, setPreviousIndex] = useState(0);
   const { audio, setAudio, raiseVolume, playHoverSound } = useAudio();
 
   useEffect(() => {
@@ -18,13 +20,16 @@ function App() {
 
   return (
     <div>
+      <VanishingBackground src={SONGS[previousIndex].background} />
       <Background src={SONGS[songIndex].background} />
       <SongMenu
         songs={SONGS}
         songIndex={songIndex}
         updateSelectedIndex={(index) => {
+          setPreviousIndex(songIndex);
           if (index === songIndex) return;
           audio.pause();
+          setPreviousIndex(songIndex);
           setSongIndex(index);
           setAudio(SONGS[index].audio); //change the source
         }}
