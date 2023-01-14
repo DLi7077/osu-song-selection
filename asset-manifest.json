@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/osu-song-selection/static/css/main.9d557600.css",
-    "main.js": "/osu-song-selection/static/js/main.d5100f46.js",
+    "main.css": "/osu-song-selection/static/css/main.c09c3e83.css",
+    "main.js": "/osu-song-selection/static/js/main.da56e82f.js",
     "static/media/kimi-no-shiranai-monogatari.mp3": "/osu-song-selection/static/media/kimi-no-shiranai-monogatari.ad8b72774a08497da619.mp3",
     "static/media/flower-dance.mp3": "/osu-song-selection/static/media/flower-dance.96a7491229bd7c73a766.mp3",
     "static/media/endless-tears.mp3": "/osu-song-selection/static/media/endless-tears.0ff1057919ed12800014.mp3",
@@ -39,11 +39,11 @@
     "static/media/menu-button-background.png": "/osu-song-selection/static/media/menu-button-background.b7d22ab73efb624cdf52.png",
     "static/media/blue-zenith.jpg": "/osu-song-selection/static/media/blue-zenith.bab03cb21a277d2224ef.jpg",
     "index.html": "/osu-song-selection/index.html",
-    "main.9d557600.css.map": "/osu-song-selection/static/css/main.9d557600.css.map",
-    "main.d5100f46.js.map": "/osu-song-selection/static/js/main.d5100f46.js.map"
+    "main.c09c3e83.css.map": "/osu-song-selection/static/css/main.c09c3e83.css.map",
+    "main.da56e82f.js.map": "/osu-song-selection/static/js/main.da56e82f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d557600.css",
-    "static/js/main.d5100f46.js"
+    "static/css/main.c09c3e83.css",
+    "static/js/main.da56e82f.js"
   ]
 }
