@@ -4,6 +4,7 @@
   justify-content: flex-end;
   padding-top: 300px;
   padding-bottom: 500px;
+  overflow-x: hidden;
 }
 
 .song-item-wrapper {
@@ -13,5 +14,5 @@
 
 .song-item {
   margin: -1rem;
-  transition: all 750ms ease-out;
+  transition: all 1000ms cubic-bezier(.16,.92,.76,1);
 }

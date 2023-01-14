@@ -40,7 +40,7 @@ export default function SongDetails({
         display: "flex",
         alignItems: "center",
         gap: "0.25rem",
-        height: "109px",
+        height: "108px",
         padding: "11px",
         paddingInline: "9px",
       }}
