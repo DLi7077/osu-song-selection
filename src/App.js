@@ -6,28 +6,22 @@ import sleep from "./Utils/sleep";
 
 function App() {
   const [songIndex, setSongIndex] = useState(0);
-  const [audio] = useState(new Audio(SONGS[songIndex].audio));
+  const [audio, setAudio] = useState(SONGS[songIndex].audio);
 
   async function raiseVolume(audio) {
-    const delay = 150;
-    audio.volume = 0;
+    const delay = 100;
+    audio.volume = 0.01;
 
-    await sleep(200);
-    audio.volume += 0.025;
-
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
       await sleep(delay).then(() => {
-        audio.volume += 0.05;
+        audio.volume += 0.025;
       });
     }
   }
 
   useEffect(() => {
     audio.loop = true;
-
-    audio.setAttribute("src", SONGS[songIndex].audio); //change the source
-    audio.load();
-    audio.currentTime = 45;
+    audio.currentTime = SONGS[songIndex].start_time ?? 0;
     audio.play();
     raiseVolume(audio);
     // eslint-disable-next-line
@@ -41,7 +35,10 @@ function App() {
         songIndex={songIndex}
         updateSelectedIndex={(index) => {
           if (index === songIndex) return;
+
+          audio.pause();
           setSongIndex(index);
+          setAudio(SONGS[index].audio); //change the source
         }}
       />
     </div>

@@ -30,11 +30,11 @@ export default function Song(props) {
 
   const classes = {
     default: {
-      transition: "all 500ms ease-out",
+      transition: "all 1000ms cubic-bezier(.16,.92,.76,1)",
       transform: `translate(${computeDivGrowth(y) + 200}px)`,
     },
     hovering: {
-      transform: `translate(${computeDivGrowth(y) + 150}px)`,
+      transform: `translate(${computeDivGrowth(y) + 125}px)`,
       margin: 0,
     },
     selected: {
@@ -52,7 +52,12 @@ export default function Song(props) {
           ...classes.default,
           ...(isHovering ? classes.hovering : {}),
           ...(props.isSelected ? classes.selected : {}),
-          ...(isHovering && props.isSelected ? { margin: "1rem" } : {}),
+          ...(isHovering && props.isSelected
+            ? {
+                transform: `translate(${computeDivGrowth(y) + 20}px)`,
+                margin: "1rem",
+              }
+            : {}),
         }}
         onClick={() => {
           props.updateSelectedIndex(props.index);
