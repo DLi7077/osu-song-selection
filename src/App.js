@@ -12,10 +12,10 @@ function App() {
     const delay = 150;
     audio.volume = 0;
 
-    await sleep(100);
+    await sleep(200);
     audio.volume += 0.025;
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
       await sleep(delay).then(() => {
         audio.volume += 0.05;
       });

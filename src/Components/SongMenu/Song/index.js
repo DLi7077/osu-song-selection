@@ -4,6 +4,7 @@ import SongDetails from "./SongDetails";
 export default function Song(props) {
   const ref = useRef();
   const [y, setY] = useState(0);
+  const [isHovering, setHovering] = useState(false);
 
   function updateY() {
     if (!ref.current) return;
@@ -12,9 +13,9 @@ export default function Song(props) {
 
   useEffect(() => {
     updateY();
-    window.addEventListener("scroll", updateY);
+    window.addEventListener("wheel", updateY);
     return () => {
-      window.addEventListener("scroll", updateY);
+      window.removeEventListener("wheel", updateY);
     };
   }, []);
 
@@ -23,31 +24,44 @@ export default function Song(props) {
 
   function computeDivGrowth(yPos) {
     const MID_POINT = 1080 / 2 - HEIGHT;
-    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 20) / 100);
+    const growth = Math.max(0, (Math.abs(MID_POINT - yPos) * 10) / 100);
     return growth;
   }
+
+  const classes = {
+    default: {
+      transition: "all 500ms ease-out",
+      transform: `translate(${computeDivGrowth(y) + 200}px)`,
+    },
+    hovering: {
+      transform: `translate(${computeDivGrowth(y) + 150}px)`,
+      margin: 0,
+    },
+    selected: {
+      transform: `translate(${computeDivGrowth(y) + 100}px)`,
+      margin: 0,
+    },
+  };
 
   return (
     <div className="song-item-wrapper">
       <div
-        className={`song-item ${props.index}`}
+        className="song-item"
         ref={ref}
         style={{
-          transform: `translate(${
-            computeDivGrowth(y) + (props.isSelected ? 0 : 200)
-          }px)`,
-          position: "relative",
-          ...(props.isSelected
-            ? {
-                transition: "transform 200ms ease-out",
-                // margin: 0,
-                marginTop: "20px",
-                marginBottom: "0px",
-              }
-            : {}),
+          ...classes.default,
+          ...(isHovering ? classes.hovering : {}),
+          ...(props.isSelected ? classes.selected : {}),
+          ...(isHovering && props.isSelected ? { margin: "1rem" } : {}),
         }}
         onClick={() => {
           props.updateSelectedIndex(props.index);
+        }}
+        onMouseEnter={() => {
+          setHovering(true);
+        }}
+        onMouseLeave={() => {
+          setHovering(false);
         }}
       >
         <div style={{ position: "absolute", height: "100%", zIndex: 1 }}>
