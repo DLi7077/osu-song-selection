@@ -224,7 +224,7 @@ const songs = [
     star_rating: 6.75,
     background: require("../Assets/Backgrounds/gareki-no-shuuon.png"),
     audio: new Audio(require("../Assets/Audio/gareki-no-shuuon.mp3")),
-    start_time: 52,
+    start_time: 68.25,
   },
   {
     title: "Gunjou Infinity",
