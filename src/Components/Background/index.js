@@ -9,22 +9,29 @@ export default function Background({ src }) {
   const YPosOffset = (yPos) => (yPos * MAX_MARGIN_PERCENT) / 1080;
 
   const classes = {
+    backgroundContainer: {
+      position: "fixed",
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+    },
     background: {
-      objectFit: "cover",
-      objectPosition: "center center",
+      width: "100%",
       transform: `scale(1.02) translate(-${XPosOffset(
         mousePos.x
       )}%, -${YPosOffset(mousePos.y)}%)`,
-      position: "fixed",
       zIndex: -2,
-      width: "100%",
       filter: "brightness(70%)",
+      backgroundColor: "black",
+      padding: "100%",
+      paddingInline: 0,
     },
   };
 
   return (
-    <>
-      {!!src && (
+    !!src && (
+      <div style={classes.backgroundContainer} className={!!src && "appear"}>
         <img
           key={`rerender-${src}`}
           src={src}
@@ -33,7 +40,7 @@ export default function Background({ src }) {
           draggable={false}
           alt="moving background"
         />
-      )}
-    </>
+      </div>
+    )
   );
 }

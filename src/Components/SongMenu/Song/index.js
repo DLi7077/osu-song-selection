@@ -28,17 +28,18 @@ export default function Song(props) {
     return growth;
   }
 
+  const defaultOffset = 120;
   const classes = {
     default: {
       transition: "all 1000ms cubic-bezier(.27,.75,.36,.96)",
-      transform: `translate(${computeDivGrowth(y) + 200}px)`,
+      transform: `translate(${computeDivGrowth(y) + defaultOffset + 100}px)`,
     },
     hovering: {
-      transform: `translate(${computeDivGrowth(y) + 110}px)`,
+      transform: `translate(${computeDivGrowth(y) + defaultOffset + 10}px)`,
       margin: 0,
     },
     selected: {
-      transform: `translate(${computeDivGrowth(y) + 100}px)`,
+      transform: `translate(${computeDivGrowth(y) + defaultOffset}px)`,
       margin: 0,
     },
   };
