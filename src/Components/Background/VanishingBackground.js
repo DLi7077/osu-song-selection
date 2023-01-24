@@ -1,5 +1,6 @@
 import React from "react";
 import useMousePosition from "../../Hooks/useMousePosition";
+import "./styles.css";
 
 export default function VanishingBackground({ src }) {
   const mousePos = useMousePosition();
@@ -8,18 +9,32 @@ export default function VanishingBackground({ src }) {
   const YPosOffset = (yPos) => (yPos * MAX_MARGIN_PERCENT) / 1080;
 
   const classes = {
+    backgroundContainer: {
+      outline: "1px solid lime",
+      zIndex: -2,
+      position: "fixed",
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+    },
     background: {
-      objectFit: "cover",
-      objectPosition: "center center",
+      width: "100%",
       transform: `scale(1.02) translate(-${XPosOffset(
         mousePos.x
       )}%, -${YPosOffset(mousePos.y)}%)`,
-      position: "fixed",
       zIndex: -2,
-      width: "100%",
       filter: "brightness(70%)",
     },
   };
 
-  return <img src={src} style={classes.background} alt="previous background" />;
+  return (
+    <div style={classes.backgroundContainer}>
+      <img
+        src={src}
+        style={classes.background}
+        alt="previous background"
+      />
+    </div>
+  );
 }
