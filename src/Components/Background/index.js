@@ -3,10 +3,10 @@ import "./styles.css";
 
 export default function Background({ src }) {
   const mousePos = useMousePosition();
-  // max scale 10%, spare 2.5% for vertical and horizontal
+  // max scale 2%, spare 2.5% for vertical and horizontal
   const MAX_MARGIN_PERCENT = 1;
-  const XPosOffset = (xPos) => (xPos * MAX_MARGIN_PERCENT) / 1920;
-  const YPosOffset = (yPos) => (yPos * MAX_MARGIN_PERCENT) / 1080;
+  const XPosOffset = (xPos) => (xPos * MAX_MARGIN_PERCENT) / window.innerWidth;
+  const YPosOffset = (yPos) => (yPos * MAX_MARGIN_PERCENT) / window.innerHeight;
 
   const classes = {
     backgroundContainer: {
@@ -23,19 +23,16 @@ export default function Background({ src }) {
       )}%, -${YPosOffset(mousePos.y)}%)`,
       zIndex: -2,
       filter: "brightness(70%)",
-      backgroundColor: "black",
-      padding: "100%",
-      paddingInline: 0,
     },
   };
 
   return (
     !!src && (
-      <div style={classes.backgroundContainer} className={!!src && "appear"}>
+      <div style={classes.backgroundContainer} className="appear">
         <img
           key={`rerender-${src}`}
           src={src}
-          className={`${!!src && "appear"}`}
+          className="appear"
           style={classes.background}
           draggable={false}
           alt="moving background"

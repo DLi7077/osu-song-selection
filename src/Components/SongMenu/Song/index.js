@@ -28,7 +28,7 @@ export default function Song(props) {
     return growth;
   }
 
-  const defaultOffset = 120;
+  const defaultOffset = 120
   const classes = {
     default: {
       transition: "all 1000ms cubic-bezier(.27,.75,.36,.96)",
