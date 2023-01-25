@@ -35,7 +35,7 @@ const songs = [
     star_rating: 5.21,
     background: require("../Assets/Backgrounds/endless-tears.jpg"),
     audio: new Audio(require("../Assets/Audio/endless-tears.mp3")),
-    start_time: 31,
+    start_time: 157,
   },
   {
     title: "Flower Dance",
@@ -107,7 +107,7 @@ const songs = [
     star_rating: 5.57,
     background: require("../Assets/Backgrounds/level-yanaginagi-ver.jpg"),
     audio: new Audio(require("../Assets/Audio/level-yanaginagi-ver.mp3")),
-    start_time: 164,
+    start_time: 164.2,
   },
   {
     title: "Tada Koe Hitotsu",
@@ -116,7 +116,7 @@ const songs = [
     star_rating: 5.59,
     background: require("../Assets/Backgrounds/tada-koe-hitotsu.png"),
     audio: new Audio(require("../Assets/Audio/tada-koe-hitotsu.mp3")),
-    start_time: 93,
+    start_time: 100,
   },
   {
     title: "Kani*Do-Luck! (TV Size)",
@@ -143,7 +143,7 @@ const songs = [
     star_rating: 5.96,
     background: require("../Assets/Backgrounds/literature.jpg"),
     audio: new Audio(require("../Assets/Audio/literature.mp3")),
-    start_time: 52,
+    start_time: 42,
   },
   {
     title: "Koshaberi Biyori",
@@ -161,7 +161,7 @@ const songs = [
     star_rating: 6.21,
     background: require("../Assets/Backgrounds/zurui-yo.jpg"),
     audio: new Audio(require("../Assets/Audio/zurui-yo.mp3")),
-    start_time: 50,
+    start_time: 144,
   },
   {
     title: "Uchiage Hanabi",
@@ -188,7 +188,7 @@ const songs = [
     star_rating: 5.71,
     background: require("../Assets/Backgrounds/kuchizuke-diamond.png"),
     audio: new Audio(require("../Assets/Audio/kuchizuke-diamond.mp3")),
-    start_time: 51,
+    start_time: 63.5,
   },
   {
     title: "Harumachi Clover",
@@ -197,7 +197,7 @@ const songs = [
     star_rating: 5.11,
     background: require("../Assets/Backgrounds/harumachi-clover.png"),
     audio: new Audio(require("../Assets/Audio/harumachi-clover.mp3")),
-    start_time: 52,
+    start_time: 55,
   },
   {
     title: "My Dearest",
@@ -215,7 +215,7 @@ const songs = [
     star_rating: 6.04,
     background: require("../Assets/Backgrounds/mou-ii-kai.jpg"),
     audio: new Audio(require("../Assets/Audio/mou-ii-kai.mp3")),
-    start_time: 14,
+    start_time: 35.5,
   },
   {
     title: "Gareki no Shuuon",
