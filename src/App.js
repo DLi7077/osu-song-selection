@@ -4,22 +4,38 @@ import { SONGS } from "./Constants/songs";
 import SongMenu from "./Components/SongMenu";
 import useAudio from "./Hooks/useAudio";
 import VanishingBackground from "./Components/Background/VanishingBackground";
+import FullscreenBar from "./Components/Startup/FullscreenBar";
 
 function App() {
   const [songIndex, setSongIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState(0);
   const { audio, setAudio, raiseVolume, playHoverSound } = useAudio();
+  const [initialLoad, setInitialLoad] = useState(true);
 
-  useEffect(() => {
+  function playMusic() {
     audio.loop = true;
     audio.currentTime = SONGS[songIndex].start_time ?? 0;
     audio.play();
     raiseVolume(audio);
+  }
+
+  useEffect(() => {
+    if (initialLoad) return;
+
+    playMusic();
     // eslint-disable-next-line
-  }, [songIndex]);
+  }, [audio]);
 
   return (
-    <div>
+    <>
+      {initialLoad && (
+        <FullscreenBar
+          onClick={() => {
+            setInitialLoad(false);
+            setAudio(SONGS[songIndex].audio); //change the source
+          }}
+        />
+      )}
       <VanishingBackground src={SONGS[previousIndex].background} />
       <Background src={SONGS[songIndex].background} />
       <SongMenu
@@ -35,7 +51,7 @@ function App() {
         }}
         playHoverSound={playHoverSound}
       />
-    </div>
+    </>
   );
 }
 
