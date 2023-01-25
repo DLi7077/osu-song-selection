@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/osu-song-selection/static/css/main.d4acda39.css",
-    "main.js": "/osu-song-selection/static/js/main.ac6086cf.js",
+    "main.css": "/osu-song-selection/static/css/main.a7e9903d.css",
+    "main.js": "/osu-song-selection/static/js/main.5731be9b.js",
     "static/media/zurui-yo.mp3": "/osu-song-selection/static/media/zurui-yo.bc5b41ab7e5bf007255b.mp3",
     "static/media/koshaberi-biyori.mp3": "/osu-song-selection/static/media/koshaberi-biyori.3733b50ea738a0f13a6f.mp3",
     "static/media/gunjou-infinity.mp3": "/osu-song-selection/static/media/gunjou-infinity.4f6067cb74ef5bf61565.mp3",
@@ -65,16 +65,16 @@
     "static/media/heart-no-atoji.jpg": "/osu-song-selection/static/media/heart-no-atoji.6a678e760f8e5c9df043.jpg",
     "static/media/Aller_Rg.ttf": "/osu-song-selection/static/media/Aller_Rg.813645bfbe6d696b9405.ttf",
     "static/media/Aller_Lt.ttf": "/osu-song-selection/static/media/Aller_Lt.0312903a0da24f55ef73.ttf",
-    "static/media/cursor.png": "/osu-song-selection/static/media/cursor.90e244641d661306d349.png",
     "static/media/menu-button-background.png": "/osu-song-selection/static/media/menu-button-background.b7d22ab73efb624cdf52.png",
     "static/media/blue-zenith.jpg": "/osu-song-selection/static/media/blue-zenith.bab03cb21a277d2224ef.jpg",
+    "static/media/cursor.png": "/osu-song-selection/static/media/cursor.e6ebf0c0f3b961f53599.png",
     "static/media/song-hover.wav": "/osu-song-selection/static/media/song-hover.af202c1aa7b643568ec6.wav",
     "index.html": "/osu-song-selection/index.html",
-    "main.d4acda39.css.map": "/osu-song-selection/static/css/main.d4acda39.css.map",
-    "main.ac6086cf.js.map": "/osu-song-selection/static/js/main.ac6086cf.js.map"
+    "main.a7e9903d.css.map": "/osu-song-selection/static/css/main.a7e9903d.css.map",
+    "main.5731be9b.js.map": "/osu-song-selection/static/js/main.5731be9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4acda39.css",
-    "static/js/main.ac6086cf.js"
+    "static/css/main.a7e9903d.css",
+    "static/js/main.5731be9b.js"
   ]
 }
