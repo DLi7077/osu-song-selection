@@ -238,8 +238,8 @@ const songs = [
   {
     title: "Namikare",
     artist: "TUYU // SnowNiNo_",
-    difficulty: "Blue Sky",
-    star_rating: 6.75,
+    difficulty: "Withering Tears",
+    star_rating: 6.99,
     background: require("../Assets/Backgrounds/namikare.jpg"),
     audio: new Audio(require("../Assets/Audio/namikare.mp3")),
     start_time: 13.5,

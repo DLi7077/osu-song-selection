@@ -5,7 +5,6 @@ import useAudio from "../../Hooks/useAudio";
 
 export default function SongMenu(props) {
   const [hoverAudio] = useAudio({ audio_file: hoverTick, volume: 1 });
-
   return (
     <div className="song-menu">
       {props.songs.map((song, idx) => (

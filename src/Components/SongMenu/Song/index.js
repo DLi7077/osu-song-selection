@@ -28,20 +28,21 @@ export default function Song(props) {
     return growth;
   }
 
-  const defaultOffset = 120
-  const classes = {
-    default: {
-      transition: "all 1000ms cubic-bezier(.27,.75,.36,.96)",
-      transform: `translate(${computeDivGrowth(y) + defaultOffset + 100}px)`,
-    },
-    hovering: {
-      transform: `translate(${computeDivGrowth(y) + defaultOffset + 10}px)`,
-      margin: 0,
-    },
-    selected: {
-      transform: `translate(${computeDivGrowth(y) + defaultOffset}px)`,
-      margin: 0,
-    },
+  const defaultOffset = 120;
+
+  const shiftOffset = (hovering, selected) => {
+    let offset = computeDivGrowth(y) + defaultOffset + 100;
+    if (hovering && selected) return computeDivGrowth(y) + 20;
+    if (hovering) offset = computeDivGrowth(y) + defaultOffset + 10;
+    if (selected) offset = computeDivGrowth(y) + defaultOffset;
+
+    return Math.min(600, offset);
+  };
+
+  const marginOffset = (hovering, selected) => {
+    if (hovering && selected) return "1rem";
+    if (hovering || selected) return 0;
+    return "-1rem";
   };
 
   return (
@@ -50,15 +51,11 @@ export default function Song(props) {
         className="song-item"
         ref={ref}
         style={{
-          ...classes.default,
-          ...(isHovering ? classes.hovering : {}),
-          ...(props.isSelected ? classes.selected : {}),
-          ...(isHovering && props.isSelected
-            ? {
-                transform: `translate(${computeDivGrowth(y) + 20}px)`,
-                margin: "1rem",
-              }
-            : {}),
+          transform: `translate(${shiftOffset(
+            isHovering,
+            props.isSelected
+          )}px)`,
+          margin: marginOffset(isHovering, props.isSelected),
         }}
         onClick={() => {
           props.updateSelectedIndex(props.index);
@@ -91,9 +88,11 @@ export default function Song(props) {
             width: `${WIDTH}px`,
             height: `${HEIGHT}px`,
             //https://stackoverflow.com/a/50391532
-            filter: `sepia(100%) saturate(300%) brightness(80%) hue-rotate(${
-              props.isSelected ? 0 : 170
-            }deg)`,
+            filter: `\
+            sepia(100%)\
+            saturate(300%)\
+            brightness(${isHovering ? 120 : 80}%)\
+            hue-rotate(${props.isSelected ? 0 : 170}deg)`,
             opacity: 0.9,
           }}
           alt="menu select background"
@@ -115,7 +114,6 @@ export default function Song(props) {
             isSelected={props.isSelected}
           />
         </div>
-        <div style={classes.tint} />
       </div>
     </div>
   );
