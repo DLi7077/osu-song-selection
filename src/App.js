@@ -5,16 +5,22 @@ import SongMenu from "./Components/SongMenu";
 import useAudio from "./Hooks/useAudio";
 import VanishingBackground from "./Components/Background/VanishingBackground";
 import FullscreenBar from "./Components/Startup/FullscreenBar";
+import { useDispatch, useSelector } from "react-redux";
+import { changeSong } from "./Store/Reducers/music";
 
 function App() {
-  const [songIndex, setSongIndex] = useState(0);
+  const dispatch = useDispatch();
+  const currentSong = useSelector((state) => state.music);
   const [previousIndex, setPreviousIndex] = useState(0);
-  const { audio, setAudio, raiseVolume, playHoverSound } = useAudio();
+  const [audio, setAudio, raiseVolume] = useAudio({
+    audio_file: null,
+    volume: currentSong.max_volume,
+  });
   const [initialLoad, setInitialLoad] = useState(true);
 
   function playMusic() {
     audio.loop = true;
-    audio.currentTime = SONGS[songIndex].start_time ?? 0;
+    audio.currentTime = SONGS[currentSong.song_index].start_time ?? 0;
     audio.play();
     raiseVolume(audio);
   }
@@ -32,24 +38,22 @@ function App() {
         <FullscreenBar
           onClick={() => {
             setInitialLoad(false);
-            setAudio(SONGS[songIndex].audio); //change the source
+            setAudio(SONGS[currentSong.song_index].audio); //change the source
           }}
         />
       )}
       <VanishingBackground src={SONGS[previousIndex].background} />
-      <Background src={SONGS[songIndex].background} />
+      <Background src={SONGS[currentSong.song_index].background} />
       <SongMenu
         songs={SONGS}
-        songIndex={songIndex}
+        songIndex={currentSong.song_index}
         updateSelectedIndex={(index) => {
-          setPreviousIndex(songIndex);
-          if (index === songIndex) return;
+          setPreviousIndex(currentSong.song_index);
+          if (index === currentSong.song_index) return;
           audio.pause();
-          setPreviousIndex(songIndex);
-          setSongIndex(index);
           setAudio(SONGS[index].audio); //change the source
+          dispatch(changeSong(index));
         }}
-        playHoverSound={playHoverSound}
       />
     </>
   );
