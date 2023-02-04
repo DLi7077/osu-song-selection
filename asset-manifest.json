@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/osu-song-selection/static/css/main.a7e9903d.css",
-    "main.js": "/osu-song-selection/static/js/main.5731be9b.js",
+    "main.js": "/osu-song-selection/static/js/main.aa7bebb3.js",
     "static/media/zurui-yo.mp3": "/osu-song-selection/static/media/zurui-yo.bc5b41ab7e5bf007255b.mp3",
     "static/media/koshaberi-biyori.mp3": "/osu-song-selection/static/media/koshaberi-biyori.3733b50ea738a0f13a6f.mp3",
     "static/media/gunjou-infinity.mp3": "/osu-song-selection/static/media/gunjou-infinity.4f6067cb74ef5bf61565.mp3",
@@ -71,10 +71,10 @@
     "static/media/song-hover.wav": "/osu-song-selection/static/media/song-hover.af202c1aa7b643568ec6.wav",
     "index.html": "/osu-song-selection/index.html",
     "main.a7e9903d.css.map": "/osu-song-selection/static/css/main.a7e9903d.css.map",
-    "main.5731be9b.js.map": "/osu-song-selection/static/js/main.5731be9b.js.map"
+    "main.aa7bebb3.js.map": "/osu-song-selection/static/js/main.aa7bebb3.js.map"
   },
   "entrypoints": [
     "static/css/main.a7e9903d.css",
-    "static/js/main.5731be9b.js"
+    "static/js/main.aa7bebb3.js"
   ]
 }
