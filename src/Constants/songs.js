@@ -80,7 +80,7 @@ const songs = [
     star_rating: 5.42,
     background: require("../Assets/Backgrounds/koko-de-ikiteiru.jpg"),
     audio: new Audio(require("../Assets/Audio/koko-de-ikiteiru.mp3")),
-    start_time: 51,
+    start_time: 152.5,
   },
   {
     title: "Ano Yume o Nazotte",
