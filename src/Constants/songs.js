@@ -283,9 +283,9 @@ const songs = [
 ];
 
 export const SONGS = songs.sort((songA, songB) => {
-  return songA.star_rating < songB.star_rating
+  return songA.star_rating < songB.star_rating // sort by rating
     ? -1
-    : songA.title < songB.title
+    : songA.title < songB.title // then sort by name
     ? 0
     : 1;
 });

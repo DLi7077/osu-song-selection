@@ -5,7 +5,7 @@ export default function FullscreenBar(props) {
         width: "100%",
         height: "100vh",
         position: "fixed",
-        backgroundColor: "rgba(0,0,0,0.2)",
+        backgroundColor: "rgba(0,0,0,0.4)",
         zIndex: 10,
         display: "flex",
         flexDirection: "column",
@@ -25,7 +25,8 @@ export default function FullscreenBar(props) {
         }}
       >
         <div style={{ fontSize: "1.75rem", paddingBottom: "1rem" }}>
-          For the best intended experience, go fullscreen (F11)
+          For the best intended experience, go fullscreen (F11) on a 1080p
+          screen
         </div>
 
         <div style={{ fontSize: "1rem" }}>Click anywhere to continue</div>
