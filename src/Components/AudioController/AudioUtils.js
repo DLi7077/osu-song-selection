@@ -19,6 +19,7 @@ export async function raiseVolume(audio) {
 }
 
 export function playMusic(currentSong) {
+  currentSong.audio_track.preload = false; // enable lazy load
   currentSong.audio_track.loop = true;
   currentSong.audio_track.currentTime =
     SONGS[currentSong.song_index].start_time ?? 0;
